@@ -1,9 +1,24 @@
 [
     {
-        "person_photo": "url:",
+      "person_photo": "../images/Johny_Depp",
         "person_name": "Johny Depp",
         "person_age": 61,
         "person_is_married": false,
-        "person_height":1.78 
-    }
+        "person_height":1.78   
+    },
+    {
+        "person_photo": "url:",
+          "person_name": "Britney Spirs",
+          "person_age": 35,
+          "person_is_married": false,
+          "person_height":1.64   
+      },
+      {
+        "person_photo": "url:",
+          "person_name": "Jason Statham",
+          "person_age": 47,
+          "person_is_married": true,
+          "person_height":1.70   
+      }
+        
 ]

@@ -201,14 +201,31 @@
     background: black;
     padding: 100px 0;
     display: flex;
+    max-width: 100%;
     justify-content: center;
+    border: orange 1px solid;
+    /* border-radius: 15px; */
+    gap: 20px;
 }
 .person {
-    border: solid 1px white;
+    color: orange;
+    font-size: 23px;
+    border: solid 1px orange;
     border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    gap: 20px;
+}
+.person h2 {
+    color: orange;
+}
+.personBtn {
+    color: orange;
+    border: orange 1px solid;
+    border-radius: 3px;
+    background-color: black;
+    padding: 5px;
+    cursor: pointer;
 }

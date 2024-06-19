@@ -303,14 +303,34 @@ stop.addEventListener( 'click', function stopNumbers() {
 
 
 // persons
+let person = [
+  person_photo = "url:",
+        person_name = "Johny Depp",
+        person_age = 61,
+        person_is_married = false,
+        person_height = 1.78 
+]
 
 const getDataBtn = document.querySelector(".personBtn");
 
 getDataBtn.onclick = () => {
   const request = new XMLHttpRequest(); // 1. Создание запроса
-  request.open('DATA', '../data/persons.json') // 2. Указание метода запроса и указание пути
-  // 3.
+  request.open('GET', '../data/persons.json') // 2. Указание метода запроса и указание пути
+  request.setRequestHeader('Content-Type', 'application/json')  // 3. Указание загаловка запроса
+  request.send() // 4. Отправка запроса
 
+  request.onload = () => {
+    const data = JSON.parse(request.response);
+    // console.log(data.name);
+    document.querySelector(".photo").innerHTML = data.person_photo;
+    document.querySelector(".name").innerHTML = data.person_name;
+    document.querySelector(".age").innerHTML = data.person_age;
+    document.querySelector(".married").innerHTML = data.person_is_married;
+    document.querySelector(".height").innerHTML = data.person_height;
+    
+  }
+  
+  
 }
 
   
