@@ -53,6 +53,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     width: 50px;
     height: 50px;
     background-color: red;
@@ -191,4 +193,22 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+/* persons */
+
+.persons {
+    background: black;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+.person {
+    border: solid 1px white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }

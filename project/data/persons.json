@@ -1,0 +1,9 @@
+[
+    {
+        "person_photo": "url:",
+        "person_name": "Johny Depp",
+        "person_age": 61,
+        "person_is_married": false,
+        "person_height":1.78 
+    }
+]
