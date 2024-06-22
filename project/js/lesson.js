@@ -61,3 +61,60 @@ const autoTabContent = (i = 0) => {
     
 }
 autoTabContent(index);
+
+// CONVERTER
+
+const usdInput = document.querySelector("#usd");
+const somInput = document.querySelector("#som");
+
+// const converter = (element, targetElement) => {
+//     element.onimput = () => {
+//         const request = new XMLHttpRequest()
+//           request.open('GET', '../data/converter.json')
+//           request.setRequestHeader('Content-Type', 'application/json')
+//           request.send()
+
+//           request.onload = () => {
+//             const data = JSON.parse(request.response)
+//             switch (element.id) {
+//                 case 'som':
+//                     targetElement.value = (element.value / data.usd).toFixed(2)
+//                     break
+//                     case 'usd':
+//                         targetElement.value = (element.value * data.usd).toFixed(2)
+//                         break  
+//                     default:
+//                         break       
+//             }
+//           }
+//     }
+// }
+    // converter(usdInput, somInput);
+    // converter(somInput, usdInput);
+
+somInput.addEventListener('input', () => {
+  const request = new XMLHttpRequest()
+  request.open('GET', '../data/converter.json')
+  request.setRequestHeader('Content-Type', 'application/json')
+  request.send()
+
+  request.onload = () => {
+    // console.log(request.response);
+    const data = JSON.parse(request.response)
+    usdInput.value = (somInput.value / data.usd).toFixed(2)
+  }
+  
+})
+usdInput.addEventListener('input', () => {
+    const request = new XMLHttpRequest()
+    request.open('GET', '../data/converter.json')
+    request.setRequestHeader('Content-Type', 'application/json')
+    request.send()
+  
+    request.onload = () => {
+      // console.log(request.response);
+      const data = JSON.parse(request.response)
+      somInput.value = (usdInput.value * data.usd).toFixed(2)
+    }
+    
+  })

@@ -1,4 +1,8 @@
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 /* GMAIL BLOCK */
 
 .gmail_block {
@@ -197,17 +201,89 @@
 
 /* persons */
 
-.persons {
-    background: black;
+h2 {
+    text-align: none;
+    color: orange;
+}
+ .personCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    gap: 15px;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: orange;
+    border: 1px solid orange;
+    width: 270px;
+    height: 400px;
+    /* height: 250px; */
+    border-radius: 8px;
+    font-size: 24px;
+    /* display: inline-block; */
+    overflow: hidden;
+ }
+ .personCard::after {
+    position: relative;
+	top: 0;
+	left: 0;
+	margin: 1px 0 0 0;
+	height: 1px;
+	background-color: orange;
+	width: 0;
+	transition: width 1s ease-out;
+	content: "";
+ }
+ 
+ .personCard:hover::after  {
+    width: 100%;
+ }
+
+ .persons {
     padding: 100px 0;
     display: flex;
-    max-width: 100%;
+    flex-wrap: wrap;
+    /* max-width: 100%; */
+    /* flex-direction: column; */
     justify-content: center;
-    border: orange 1px solid;
+    align-items: center;
+    border-top: orange 1px solid;
+    border-bottom: orange 1px solid;
     /* border-radius: 15px; */
     gap: 20px;
+    background: black;
+    transition: 1.5s;
 }
-.person {
+.img_border {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border: 1px solid orange;
+    border-radius: 50%;
+    display: inline-block;
+  overflow: hidden;
+}
+.person_photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* margin: 0 auto; */
+    
+    object-fit: cover;
+    transition: 0.5s;
+    /* display: block; */
+} 
+.person_photo:hover {
+    transform: scale(1.2);
+}
+.person_photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* .person {
     color: orange;
     font-size: 23px;
     border: solid 1px orange;
@@ -217,15 +293,15 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-}
+} */
 .person h2 {
     color: orange;
 }
-.personBtn {
+/* .personBtn {
     color: orange;
     border: orange 1px solid;
     border-radius: 3px;
     background-color: black;
     padding: 5px;
     cursor: pointer;
-}
+} */

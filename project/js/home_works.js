@@ -302,36 +302,131 @@ stop.addEventListener( 'click', function stopNumbers() {
 })
 
 
-// persons
-let person = [
-  person_photo = "url:",
-        person_name = "Johny Depp",
-        person_age = 61,
-        person_is_married = false,
-        person_height = 1.78 
-]
+// // persons
+// let person = [
+//  {
+//    photo: "../images/Johny_Depp.jpg",
+//    person_name: "Johny Depp",
+//    person_age: 61,
+//    person_is_married: false,
+//    person_height: 1.78 
+//   },
+//  { 
+//    photo: "../images/britni-spirs.jpg",
+//    person_name: "Britney Spirs",
+//    person_age: 35,
+//    person_is_married: false,
+//    person_height: 1.64
+//   },
+//  {
+//    photo: "../images/Statham.jpg",
+//    person_name: "Jason Statham",
+//    person_age: 47,
+//    person_is_married: true,
+//    person_height: 1.70 
+//   },         
+// ]
 
-const getDataBtn = document.querySelector(".personBtn");
+// -------------------------------------------------- PERSON CARDS ------------------------------------------------------
 
-getDataBtn.onclick = () => {
+const personBlock = document.querySelector(".persons");
+const personData = () => {
   const request = new XMLHttpRequest(); // 1. Создание запроса
-  request.open('GET', '../data/persons.json') // 2. Указание метода запроса и указание пути
-  request.setRequestHeader('Content-Type', 'application/json')  // 3. Указание загаловка запроса
-  request.send() // 4. Отправка запроса
+    request.open('GET', '../data/persons.json') // 2. Указание метода запроса и указание пути
+    request.setRequestHeader('Content-Type', 'application/json')  // 3. Указание загаловка запроса
+    request.send() // 4. Отправка запроса
 
-  request.onload = () => {
-    const data = JSON.parse(request.response);
-    // console.log(data.name);
-    document.querySelector(".photo").innerHTML = data.person_photo;
-    document.querySelector(".name").innerHTML = data.person_name;
-    document.querySelector(".age").innerHTML = data.person_age;
-    document.querySelector(".married").innerHTML = data.person_is_married;
-    document.querySelector(".height").innerHTML = data.person_height;
     
+    request.onload = () => {
+      const data = JSON.parse(request.response);
+     
+      data.forEach((info) => {
+        // console.log(info);
+
+         const personCard = document.createElement('div');
+  // console.log(personCard);
+  personCard.setAttribute('class','personCard');
+  personCard.innerHTML = `
+  <div class = "img_border">
+  <img class= "person_photo" src= ${info.photo}   alt= ${info.name}>
+  </div>
+  <h2 class = "underline">${info.name}</h2>
+  <span>Age: ${info.age}</span>
+  <span>Married: ${info.married} </span>
+  <span>Height: ${info.height}m</span>
+  `;
+
+  personBlock.append(personCard)
+      }
+    )
   }
-  
-  
 }
+personData()
+
+
+// ----------------------------------------------------------------- TEA INFO (DZ PART 2) ------------------------------------
+
+const teaData = () => {
+  const teaRequest = new XMLHttpRequest(); // 1. Создание запроса
+    teaRequest.open('GET', '../data/tea.json') // 2. Указание метода запроса и указание пути
+    teaRequest.setRequestHeader('Content-Type', 'application/json')  // 3. Указание загаловка запроса
+    teaRequest.send() // 4. Отправка запроса
+
+    
+    teaRequest.onload = () => {
+      const teainfo = JSON.parse(teaRequest.response);
+     
+      teainfo.forEach((tea) => {
+        console.log(tea.name, `\n`,`\n`, tea.facts);
+      }
+    )
+  }
+}
+teaData()
+
+// const personData = document.querySelector(".personBtn")
+
+// personData.addEventListener('click', () => {
+//   const request = new XMLHttpRequest()
+//   request.open('GET', '../data/persons.json')
+//   request.setRequestHeader('Content-Type', 'application/json')
+//   request.send()
+
+//   request.onload = () => {
+//     // console.log(request.response);
+//     const data = JSON.parse(request.response)
+//    console.log(data.name);
+//   }
+// })
+
+
+
+
+
+
+// const getDataBtn = document.querySelector(".personBtn");
+
+// getDataBtn.onclick = () => {
+//   const request = new XMLHttpRequest(); // 1. Создание запроса
+//   request.open('GET', '../data/persons.json') // 2. Указание метода запроса и указание пути
+//   request.setRequestHeader('Content-Type', 'application/json')  // 3. Указание загаловка запроса
+//   request.send() // 4. Отправка запроса
+//   request.onload = () => {
+//     const data = JSON.parse(request.response);
+//     // console.log(data.name);
+//     document.querySelector(".photo").innerHTML = data.person_photo1;
+//     document.querySelector(".name").innerHTML = data.person_name1;
+//     document.querySelector(".age").innerHTML = data.person_age1;
+//     document.querySelector(".married").innerHTML = data.person_is_married1;
+//     document.querySelector(".height").innerHTML = data.person_height1;
+//   }
+// }
+
+
+
+
+
+
 
   
 

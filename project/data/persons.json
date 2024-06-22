@@ -1,24 +1,59 @@
 [
     {
-      "person_photo": "../images/Johny_Depp",
-        "person_name": "Johny Depp",
-        "person_age": 61,
-        "person_is_married": false,
-        "person_height":1.78   
+      "photo": "../images/Johny_Depp.jpg",
+        "name": "Johny Depp",
+        "age": 61,
+        "married": false,
+        "height":1.78   
     },
     {
-        "person_photo": "url:",
-          "person_name": "Britney Spirs",
-          "person_age": 35,
-          "person_is_married": false,
-          "person_height":1.64   
+        "photo": "../images/britni-spirs.jpg",
+          "name": "Britney Spirs",
+          "age": 35,
+          "married": false,
+          "height":1.64   
       },
       {
-        "person_photo": "url:",
-          "person_name": "Jason Statham",
-          "person_age": 47,
-          "person_is_married": true,
-          "person_height":1.70   
+        "photo": "../images/Statham.jpg",
+          "name": "Jason Statham",
+          "age": 47,
+          "married": true,
+          "height":1.70   
+      },
+      {
+        "photo": "../images/Robert_De_Niro.jpg",
+          "name": "Robert De Niro",
+          "age": 80,
+          "married": true,
+          "height":1.77   
+      },
+      {
+        "photo": "../images/rihanna.jpg",
+          "name": "Robin Rihanna Fenty",
+          "age": 36,
+          "married": true,
+          "height":1.73   
+      },
+      {
+        "photo": "../images/Leonardo-D-Caprio.jpg",
+          "name": "Leonardo DiCaprio",
+          "age": 49,
+          "married": true,
+          "height":1.83   
+      },
+      {
+        "photo": "../images/katy-perry.jpg",
+          "name": "Katy Parry",
+          "age": 39,
+          "married": true,
+          "height":1.71   
+      },
+      {
+        "photo": "../images/justin-timberlake.jpg",
+          "name": "Justin Timberlake",
+          "age": 43,
+          "married": true,
+          "height":1.85   
       }
         
 ]
